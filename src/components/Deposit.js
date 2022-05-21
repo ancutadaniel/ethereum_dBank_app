@@ -3,8 +3,7 @@ import * as ACTIONS from '../redux_hooks/constants';
 import { Container, Form, Card, Button, Divider } from 'semantic-ui-react';
 
 const Deposit = ({ state, dispatch }) => {
-  const { web3, loading, balance, contractDbank, account, interestBalance } =
-    state;
+  const { web3, balance, contractDbank, account, interestBalance } = state;
   const { SET_LOADING, SET_ERROR, SET_DEPOSIT } = ACTIONS;
 
   const inputRef = useRef(null); // node
@@ -27,7 +26,6 @@ const Deposit = ({ state, dispatch }) => {
     <Container>
       <Card fluid>
         <Form
-          loading={loading}
           onSubmit={handleSubmit}
           style={{
             padding: '20px',

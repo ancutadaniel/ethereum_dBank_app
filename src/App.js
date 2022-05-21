@@ -8,21 +8,12 @@ import DBank from '../src/build/abi/DBank.json';
 import Token from '../src/build/abi/Token.json';
 import MainMenu from './components/Menu';
 
-import {
-  Container,
-  Divider,
-  Card,
-  Dimmer,
-  Loader,
-  Message,
-  Icon,
-  Button,
-} from 'semantic-ui-react';
+import { Container, Divider, Message, Icon, Button } from 'semantic-ui-react';
 import Main from './components/Main';
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
-  const { account, errors, loading, reloadData } = state;
+  const { account, errors, reloadData } = state;
   const { SET_WEB3, SET_ERROR } = ACTIONS;
 
   const loadWeb3 = useCallback(async () => {
@@ -93,23 +84,7 @@ const App = () => {
   return (
     <div className='App'>
       <MainMenu account={account} />
-      {loading ? (
-        <Container>
-          <Card centered>
-            <Dimmer
-              style={{
-                width: '320px',
-                height: '100px',
-              }}
-            >
-              <Loader />
-            </Dimmer>
-          </Card>
-        </Container>
-      ) : (
-        <Main state={state} dispatch={dispatch} />
-      )}
-
+      <Main state={state} dispatch={dispatch} />
       <Container>
         <Divider horizontal>§</Divider>
         {errors && (
