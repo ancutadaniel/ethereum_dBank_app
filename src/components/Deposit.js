@@ -12,7 +12,6 @@ const Deposit = ({ state, dispatch }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: SET_LOADING });
-    console.log(inputRef.current.value);
     try {
       await contractDbank.methods.deposit().send({
         from: account,
