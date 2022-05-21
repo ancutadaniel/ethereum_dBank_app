@@ -1,7 +1,7 @@
 import * as ACTIONS from './constants';
 
 export const reducer = (state, action) => {
-  const { SET_WEB3, SET_ERROR, SET_DEPOSIT } = ACTIONS;
+  const { SET_WEB3, SET_ERROR, SET_DEPOSIT, SET_LOADING } = ACTIONS;
 
   switch (action.type) {
     case SET_WEB3:
@@ -15,6 +15,12 @@ export const reducer = (state, action) => {
         ...state,
         reloadData: true,
         loading: false,
+      };
+
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: !state.loading,
       };
 
     case SET_ERROR:

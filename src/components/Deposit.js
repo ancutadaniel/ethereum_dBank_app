@@ -21,7 +21,6 @@ const Deposit = ({ state, dispatch }) => {
     } catch (error) {
       dispatch({ type: SET_ERROR, value: error });
     }
-    inputRef.current.value = '';
   };
 
   return (
