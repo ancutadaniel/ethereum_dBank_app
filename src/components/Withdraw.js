@@ -3,7 +3,7 @@ import * as ACTIONS from '../redux_hooks/constants';
 import { Container, Form, Card, Button } from 'semantic-ui-react';
 
 const Withdraw = ({ state, dispatch }) => {
-  const { loading, contractDbank, account, web3, dBankBalance } = state;
+  const { contractDbank, account, web3, dBankBalance } = state;
   const { SET_LOADING, SET_ERROR, SET_DEPOSIT } = ACTIONS;
 
   const handleWithdraw = async (e) => {
@@ -23,7 +23,6 @@ const Withdraw = ({ state, dispatch }) => {
     <Container>
       <Card fluid>
         <Form
-          loading={loading}
           onSubmit={handleWithdraw}
           style={{
             padding: '20px',

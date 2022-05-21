@@ -27,6 +27,8 @@ export const reducer = (state, action) => {
       return {
         ...state,
         errors: action.value,
+        loading: false,
+        reloadData: true,
       };
 
     default:
